@@ -16,7 +16,7 @@ sendButton.addEventListener('click', () => {
 
 
 
-  fetch('http://localhost:8080/sendMessage', {
+  fetch('http://app_96a0490b-c253-4349-88ff-1fbbf974bb4b/sendMessage', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

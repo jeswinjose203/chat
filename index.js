@@ -9,7 +9,7 @@ const app = express();
 
 
 
-const io = socketIO(server);
+
 
 var connection = mysql.createConnection({
     host:'bx2o3pyafjmcpf1ks5ma-mysql.services.clever-cloud.com',
@@ -67,7 +67,7 @@ connection.query(query, valuesToInsert, (error, results) => {
   }
 });
 
-    
+const io = socketIO(server);
 
 // Set up the Socket.IO connection
 io.on('connection', (socket) => {

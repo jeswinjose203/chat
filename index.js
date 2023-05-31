@@ -8,10 +8,10 @@ const server = http.createServer(app);
 const io = socketIO(server);
 
 var connection = mysql.createConnection({
-    host:'localhost',
-    user: 'sqluser',
-    password: 'password',
-    database: 'new_schema'
+    host:'bwfk0snvpyde3qoonmna-mysql.services.clever-cloud.com',
+    user: 'ugwc73811d2o7o4h',
+    password: 'suxooHbjhBhCg9j9UJVl',
+    database: 'bwfk0snvpyde3qoonmna'
 });
 
 connection.connect(function(error){

@@ -33,7 +33,7 @@ io.on('connection', (socket) => {
     console.log(`Received message: ${message}`);
     io.emit('message', message);
 
-    var query = 'INSERT INTO new_schema.chat (sr_no, text) VALUES (?, ?) ' +
+    var query = 'INSERT INTO `new_schema.chat` (sr_no, text) VALUES (?, ?) ' +
             'ON DUPLICATE KEY UPDATE text = VALUES(text)';
 var valuesToInsert = [i, message];
 
@@ -66,7 +66,7 @@ connection.query(query, valuesToInsert, (error, results) => {
 
 // Handle the '/messages' endpoint
 app.get('/messages', (req, res) => {
-  const query = 'SELECT * FROM new_schema.chat';
+  const query = 'SELECT * FROM `new_schema.chat`';
 
   // Execute the SELECT query
   connection.query(query, (error, results) => {

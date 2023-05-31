@@ -15,8 +15,7 @@ sendButton.addEventListener('click', () => {
   const message = inputMessage.value;
 
 
-
-  fetch('http://app_96a0490b-c253-4349-88ff-1fbbf974bb4b/sendMessage', {
+  fetch('http://app-96a0490b-c253-4349-88ff-1fbbf974bb4b.cleverapps.io/sendMessage', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

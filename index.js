@@ -81,7 +81,7 @@ app.get('/messages', (req, res) => {
 });
 
 
-const port = 3000; // or any port you prefer
+const port = 8080; // or any port you prefer
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

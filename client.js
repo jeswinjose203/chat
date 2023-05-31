@@ -13,6 +13,28 @@ const sendButton = document.getElementById('sendButton');
 sendButton.addEventListener('click', () => {
   const inputMessage = document.getElementById('inputMessage');
   const message = inputMessage.value;
+
+
+
+  fetch('http://localhost:8080/sendMessage', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ message })
+  })
+    .then(response => response.text())
+    .then(data => {
+      console.log(data); // 'Message received' (response from the server)
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+
+
+
+
+
   socket.emit('message', message);
   inputMessage.value = '';
 });

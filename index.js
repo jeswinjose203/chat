@@ -4,7 +4,7 @@ const socketIO = require('socket.io');
 var mysql = require('mysql2');
 
 const app = express();
-
+var server = http.createServer(app);
 
 
 
@@ -26,7 +26,7 @@ connection.connect(function(error){
 // Serve static files
 app.use(express.static(__dirname));
 var i = 1;
-const server = http.createServer((req, res) => {
+var server = http.createServer((req, res) => {
   if (req.url === '/sendMessage' && req.method === 'POST') {
     let body = '';
     

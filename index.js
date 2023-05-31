@@ -4,7 +4,7 @@ const socketIO = require('socket.io');
 var mysql = require('mysql2');
 
 const app = express();
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 
 
@@ -26,7 +26,7 @@ connection.connect(function(error){
 // Serve static files
 app.use(express.static(__dirname));
 var i = 1;
-var server = http.createServer((req, res) => {
+const server1 = http.createServer((req, res) => {
   if (req.url === '/sendMessage' && req.method === 'POST') {
     let body = '';
     
@@ -133,4 +133,7 @@ app.get('/messages', (req, res) => {
 const port = 8080; // or any port you prefer
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+});
+server1.listen(3000, () => {
+  console.log(`Server is running on port ${3000}`);
 });
